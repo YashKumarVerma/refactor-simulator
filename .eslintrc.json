@@ -1,0 +1,21 @@
+{
+    "extends": "airbnb-base",
+    "globals": {},
+    "rules": {
+        "indent": ["error", 4],
+        "max-len": [
+            "error",
+            {
+                "code": 80,
+                "tabWidth": 4,
+                "ignoreUrlsignoreUrls": true,
+                "ignoreTemplateLiterals": true
+            }
+        ],
+        "no-var": "error",
+        "no-plusplus": "error",
+        "vars-on-top": "error",
+        "no-unused-vars": "error",
+        "no-param-reassign": 0
+    }
+}
