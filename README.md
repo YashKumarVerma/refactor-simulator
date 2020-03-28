@@ -30,10 +30,18 @@ The proposed directory structure would be
 **Documentation**
 
 -   The generated docs are available in `docs/` directory.
+-   To generate again, run `jsdoc -r modules`
 
 **Tests**
 
--   The tests for the andGate can be done by opening the testRunner.html
+-   The tests runner can be seen by opening the `test/testRunner.html`
+-   The testing module for and gate can be seen in `test/test.andGate.js`
+-   Run the test by the following commands
+
+```
+$ npm install
+$ npm test
+```
 
 **Pretter Config file**
 
@@ -42,5 +50,3 @@ The proposed directory structure would be
 **Eslint Config File**
 
 -   `.eslintrc.json`
-
-For security purposes, the file:// protocol is not allowed to load scripts, therefore a mini server is used
