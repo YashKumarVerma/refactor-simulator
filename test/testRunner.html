@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="./../node_modules/mocha/mocha.css">
+</head>
+
+<body>
+	<!-- div to show test results -->
+	<div id="mocha"></div>
+
+	<!-- load test runner and assertion library -->
+	<script src="./../node_modules/mocha/mocha.js"></script>
+	<script src="./../node_modules/chai/chai.js"></script>
+
+	<!-- setup test environment -->
+	<script>mocha.setup('bdd')</script>
+
+	<!-- modules to be tested kept here -->
+	<script src="./../modules/andGate.js" type="module"></script>
+
+	<!-- loading test files -->
+	<script type="module" src="./test.andGate.js"></script>
+
+	<!-- run the tests -->
+</body>
+<script>
+	window.onload = () => mocha.run()
+</script>
+
+</html>
