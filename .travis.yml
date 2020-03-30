@@ -8,11 +8,15 @@ cache:
         - 'node_modules'
 
 install:
-    - npm install -g automated-surge
+    - npm install -g surge
     - npm install -g jsdoc
 
 script:
     - ls
     - jsdoc -r modules ./README.md
     - mv out documentation
-    - automated-surge --project=./documentation --domain=circuitverse-docs.surge.sh
+
+deploy:
+    provider: surge
+    project: ./documentation/
+    domain: circuitverse-codebase-docs.surge.sh
