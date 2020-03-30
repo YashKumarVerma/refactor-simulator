@@ -20,3 +20,4 @@ deploy:
     provider: surge
     project: ./documentation/
     domain: circuitverse-codebase-docs.surge.sh
+    skip_cleanup: true
