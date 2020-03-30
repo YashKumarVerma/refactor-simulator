@@ -12,9 +12,9 @@ install:
     - npm install -g jsdoc
 
 script:
-    - ls
     - jsdoc -r modules ./README.md
     - mv out documentation
+    - ls documentation
 
 deploy:
     provider: surge
