@@ -13,3 +13,6 @@ install:
 
 script:
     - ls
+    - jsdoc -r modules
+    - mv out documentation
+    - automated-surge --project=./documentation --domain=circuitverse-docs.surge.sh
