@@ -1,5 +1,7 @@
 // create instance of express server
 const express = require('express');
+const puppeteer = require('puppeteer');
+
 const app = express();
 
 // automatically open test page
@@ -18,9 +20,33 @@ app.get('/', (req, res) => {
     res.sendFile(`${__dirname}/testRunner.html`);
 });
 
+async function worker() {
+    // open a new browser
+    const browser = await puppeteer.launch({ headless: false });
+
+    // open a new page
+    const page = await browser.newPage();
+
+    // open the test url
+    await page.goto(`http://localhost:${port}`);
+
+    // wait for 5 seconds to end execution
+    await page.waitFor(1000 * 5);
+
+    // screenshot
+    await page.screenshot({
+        path: './testResult.png',
+    });
+
+    // close browser
+    await page.close();
+}
+
 // start listening on post
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
     console.log(`open http://localhost:${port} to run tests`);
     opn(`http://localhost:${port}`);
+
+    // worker();
 });
